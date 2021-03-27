@@ -17,23 +17,31 @@ Do the following:
 
    HINT: no function required
 */
+let votingAge = 28 ;
 
-
+if (votingAge>18) {
+  console.log("True"); 
+}
 
 /*
 Task 1b - Values
 
 Do the following:   
    1. Declare two variables and assign them values
-   2. Use a conditional to change the value of the 1st variable based on the value assigned to the 2nd variable
+   2. Use a conditional to change the value of the 1st variable 
+   based on the value assigned to the 2nd variable
    3. Console log the new value of the 1st variable
 
    HINT: no function required
 */
 
+let par1 = 18;
+let par2 = 5;
 
-
-
+if (par1 > par2) {
+  par1 = 20;
+  console.log(par1);
+}
 
 /*
 Task 1c - Convert Strings to Numbers
@@ -46,7 +54,17 @@ Do the following:
    HINT: look up the Number method
 */
 
+let numb = '1999';
+console.log(numb);
+console.log(typeof numb);
 
+Number(numb);
+console.log( Number(numb)+ 10);
+console.log(typeof numb);
+
+let numb2 = Number(numb);
+console.log(numb2+ 10);
+console.log(typeof numb2);
 
 
 /*
@@ -58,11 +76,13 @@ Do the following:
    3. Multiply a and b and return the answer
 */
 
-function multiply(/*add your code here*/){
-    /*add your code here*/
-  }
-
-
+function multiply (a,b) {
+  var mult_result = a*b ;
+  return mult_result;
+}
+let a = 2;
+let b = 6;
+console.log(multiply(a,b));
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
@@ -74,11 +94,13 @@ Do the following:
    3. Return the newly calculated age
 */
 
-function dogYears(/*add your code here*/){
-    /*add your code here*/
+function dogYears(a){
+    var result = a * 7;
+    return result;
 }
 
-
+var z = 2;
+console.log(dogYears(z));
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
@@ -107,11 +129,33 @@ Use the hungryDog function and feeding requirements below to do the following:
   NOTE: If done correctly, a weight of 15 lbs and age of 1 year would return 0.44999999999999996
 */  
 
-function hungryDog(/*add your code here*/){
-    /*add your code here*/
-  }
+function hungryDog(yrdog,wdog) {
+  if (yrdog >=1 && wdog<6) {
+    var food2 = wdog*5/100;
+    return food2;
+  } else if (yrdog >=1 && wdog>=6 && wdog<11) {
+    var food2 = wdog*4/100;
+    return food2;
+  } else if (yrdog >=1 && wdog>=11 && wdog<15) {
+    var food2 = wdog*3/100;
+    return food2;
+  } else if (yrdog >=1 && wdog>=15 ) {
+    var food2 = wdog*2/100;
+    return food2;
+  } else if (yrdog>=0.166 && yrdog<0.333) {
+    var food2 = wdog*10/100;
+    return food2;
+  } else if (yrdog>=0.333 && yrdog<0.58) {
+    var food2 = wdog*5/100;
+    return food2;
+  } else if (yrdog>=0.58  && yrdog<1) {
+    var food2 = wdog*4/100;
+    return food2;
+  } 
+}
 
 
+console.log(hungryDog(2,10))
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
@@ -136,9 +180,18 @@ Use the game function below to do the following:
 
 function game(user, computer){
     /*add your code here*/
+    if (computer>user) {
+      return "You lose!";
+    } else if (computer<user) {
+      return "You win";
+    } else if (computer == user) {
+      return "Int's a tie";   
 }
-  
-  
+}
+var computer = Math.random()
+console.log(game(7, computer))
+
+
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
@@ -151,10 +204,11 @@ Using the miles function below do the following:
   3. Return the number of miles
 */
 
-function miles(/*add your code here*/){
+function miles(kms){
+  return kms* 0.621371;
     /*add your code here*/
   }
-
+console.log(miles(5))
 
 
 //Task 5b - Feet to CM
@@ -165,11 +219,11 @@ Using the feet function below do the following:
   3. Return number of feet
 */
 
-function feet(/*add your code here*/){
-    /*add your code here*/
+function feet(cm){
+    return cm * 0.0328084 ;
   }
  
-
+console.log(feet(5))
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
@@ -181,9 +235,17 @@ Using the annoyingSong function below do the following:
       "{number} bottles of soda on the wall, {number} bottles of soda, take one down pass it around {number left over} bottles of soda on the wall"
 */
 
-function annoyingSong(/*add your code here*/){
-        /*add your code here*/
+function annoyingSong(i){
+   var text = "";
+   while (i > 0) {
+    console.log(i+ " bottles of soda on the wall, " +i+ " bottles of soda, take one down pass it around "+ i +" bottles of soda on the wall");
+    i = i - 1;
   }
+  }
+
+var i = 10;
+console.log(annoyingSong(i))
+
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
@@ -201,10 +263,22 @@ Using the grade function below do the following:
    below should return 'you got an F'
 */
   
-function grade(/*Your Code here */){
-  /*Your Code here */
+function grade(score){
+
+  if (score>=90 && score<=100) {
+    return 'you got an A';
+  } else if (score>=80 && score<=89) {
+    return 'you got an B';
+  } else if (score>=70 && score<=79) {
+    return 'you got an C';   
+  }  else if (score>= 60 && score<=69){
+   return 'you got an D';   
+  } else if (score<60) {
+    return 'you got an F';   
   }
   
+  }
+console.log(grade(95))  
   
 
 /*💪💪💪💪💪💪💪💪💪💪 Stretch 💪💪💪💪💪💪💪💪💪💪*/
@@ -220,10 +294,11 @@ Using the vowelCounter function below do the following:
 */
 
 
-function vowelCounter(/*add your code here*/) {
-    /*add your code here*/
+function vowelCounter(word_var) {
+  let num_var= word_var.match(/[aeiou]/gi).length;
+  return "Number of vowels in " + word_var + " : " + num_var ;
 }
-
+console.log(vowelCounter("MAria"))
 
 
 /*🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑 Please do not modify anything below this line 🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑*/
